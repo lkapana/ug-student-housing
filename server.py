@@ -3,7 +3,7 @@ from flask import Flask, request, render_template, redirect, url_for, session, s
 from werkzeug.utils import secure_filename
 from pathlib import Path
 from datetime import datetime
-import sqlite3, os, smtplib
+import sqlite3, os, smtplib, shutil
 from email.message import EmailMessage
 
 BASE=Path(__file__).parent

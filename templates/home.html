@@ -1,1 +1,37 @@
+<!doctype html><html lang="ka"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>UG Student Housing</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,"Noto Sans Georgian",sans-serif;background:#f4f7fb;color:#172033}.hero{background:linear-gradient(135deg,#0d2442,#2463e8);color:#fff;padding:70px 20px}.wrap{max-width:980px;margin:auto}.tag{letter-spacing:.08em;font-size:12px;font-weight:bold;opacity:.85}.hero h1{font-size:clamp(38px,6vw,66px);line-height:1.04;max-width:900px;margin:16px 0}.hero p{font-size:19px;line-height:1.7;max-width:850px;color:#e9efff}.btn{display:inline-block;background:#fff;color:#102c58;padding:15px 24px;border-radius:10px;text-decoration:none;font-weight:bold;margin-top:10px}section{padding:52px 20px}.box{background:#fff;border-radius:18px;padding:30px;box-shadow:0 12px 40px #172b4d12}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:25px}.card{background:#fff;border-radius:15px;padding:22px;box-shadow:0 8px 30px #172b4d0c}.icon{font-size:28px}.muted{color:#667085}.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}label{display:block;font-weight:bold;margin:16px 0 7px}input,select,textarea{width:100%;padding:13px;border:1px solid #d6dce5;border-radius:9px;font:inherit}textarea{min-height:100px}.submit{margin-top:18px;width:100%;padding:15px;border:0;border-radius:10px;background:#2563eb;color:#fff;font-size:16px;font-weight:bold;cursor:pointer}.notice{padding:12px 14px;background:#eef4ff;border-radius:10px}
+.terms-highlight{margin-top:22px;padding:20px;border:3px solid #ef4444;border-radius:14px;background:#fff1f2;box-shadow:0 6px 20px #ef444433}
+.terms-title{font-size:21px;font-weight:800;color:#b91c1c;margin-bottom:12px}
+.terms-item{padding:9px 0;color:#7f1d1d;font-size:16px;line-height:1.6}
+.terms-item strong{color:#991b1b}
+.flash{background:#fff0f0;padding:12px;border-radius:8px;margin-bottom:15px}@media(max-width:700px){.grid,.row{grid-template-columns:1fr}.hero{padding:48px 20px}}
+</style></head><body>
+<header class="hero"><div class="wrap"><div class="tag">UG • STUDENT HOUSING</div>
+<h1>გაქვთ გასაქირავებელი ბინა?</h1>
+<p><b>ჩვენ ვართ კერძო აგენტი და წარმოვადგენთ ისრაელის კომპანიას, რომელიც სტუდენტებისთვის გრძელვადიანად აქირავებს ბინებს.</b></p>
+<p>ამ ეტაპზე ვეძებთ <b>50-მდე ბინას</b> სხვადასხვა ლოკაციაზე, ძირითადად <b>საქართველოს უნივერსიტეტთან (UG)</b> და <b>მარშალ გელოვანის ქუჩის მიმდებარე ტერიტორიაზე.</b></p>
+<a class="btn" href="#offer">ბინის შეთავაზება →</a></div></header>
+<section><div class="wrap"><h2>რატომ დაგვიკავშირდეთ?</h2><div class="grid">
+<div class="card"><div class="icon">📅</div><h3>გრძელვადიანი ქირა</h3><p class="muted">სტუდენტის მიერ ბინის ქირაობა დაგეგმილია 1 წლის ვადით.</p></div>
+<div class="card"><div class="icon">🎓</div><h3>სტუდენტებისთვის</h3><p class="muted">ვეძებთ საცხოვრებლებს სტუდენტებისთვის კომფორტულ და მოთხოვნად ლოკაციებზე.</p></div>
+<div class="card"><div class="icon">🤝</div><h3>თქვენი პირობები</h3><p class="muted">მიუთითეთ თქვენთვის მისაღები ფასი, დეპოზიტი და სხვა პირობები.</p></div></div></div></section>
+<section id="offer"><div class="wrap"><div class="box"><h2>შესთავაზეთ თქვენი ბინა</h2><p class="muted">შეავსეთ ინფორმაცია და ატვირთეთ ბინის ფოტოები. თქვენი მონაცემები კონფიდენციალურად ინახება.</p>
+{% with messages=get_flashed_messages() %}{% for m in messages %}<div class="flash">{{m}}</div>{% endfor %}{% endwith %}
+<form method="post" enctype="multipart/form-data"><div class="row"><div><label>სახელი და გვარი *</label><input name="name" required></div><div><label>ტელეფონი / WhatsApp *</label><input name="phone" required></div></div>
+<div class="row"><div><label>ქალაქი *</label><input name="city" placeholder="თბილისი" required></div><div><label>ბინის სრული მისამართი *</label><input name="address" required></div></div>
+<div class="row"><div><label>თვიური ქირა *</label><input name="price" placeholder="მაგ. 1,200 $" required></div><div><label>თავისუფალია როდიდან?</label><input type="date" name="available"></div></div>
+<div class="row"><div><label>საძინებლები</label><select name="bedrooms"><option>სტუდიო</option><option>1</option><option>2</option><option>3+</option></select></div><div><label>ავეჯი</label><select name="furnished"><option>სრულად ავეჯით</option><option>ნაწილობრივ ავეჯით</option><option>უავეჯოდ</option></select></div></div>
+<label>თქვენი პირობები</label><textarea name="terms" placeholder="დეპოზიტი, კომუნალური გადასახადები, გადახდის პირობები, სააგენტოს საკომისიოს პირობები და სხვა..."></textarea>
+<label>დამატებითი ინფორმაცია</label><textarea name="notes" placeholder="სხვა ინფორმაცია ბინის შესახებ"></textarea>
+<label>ბინის ფოტოები</label><input type="file" name="photos" accept="image/*" multiple><p class="muted">შეგიძლიათ ატვირთოთ რამდენიმე ფოტო. მაქსიმალური საერთო ზომა: 25 MB.</p>
 
+<div class="terms-highlight">
+  <div class="terms-title">⚠️ ჩვენი ძირითადი პირობები</div>
+  <div class="terms-item"><strong>💰 წინასწარი გადახდა:</strong> სტუდენტი გადაიხდის <strong>2 თვის ქირას წინასწარ</strong>.</div>
+  <div class="terms-item"><strong>🤝 სააგენტოს საკომისიო:</strong> ჩვენ ვიღებთ <strong>1 თვის ქირის ოდენობის თანხას</strong> საშუამავლო მომსახურებისთვის.</div>
+  <div class="terms-item"><strong>📄 ხელშეკრულება:</strong> ხელშეკრულება გაფორმდება <strong>იურიდიულად</strong>. ხელშეკრულების დეტალებში ცვლილების შეტანა შესაძლებელია მხოლოდ მას შემდეგ, რაც <strong>ორივე მხარე შეთანხმდება</strong>.</div>
+</div>
+
+<button class="submit">განცხადების გაგზავნა</button></form></div></div></section>
+<footer style="text-align:center;padding:30px;color:#667085">UG Student Housing</footer></body></html>
